@@ -97,7 +97,7 @@ function transform(object) {
   let pointStructure = {};
   for (key in object) {
     for (let i = 0; i < object[key].length; i++) {
-       pointStructure[object[key][i]] = Number(key);
+       pointStructure[object[key][i].toLowerCase()] = Number(key);
     }
   }
   return pointStructure;
@@ -106,6 +106,7 @@ function transform(object) {
 let newPointStructure = transform(oldPointStructure);
 
 function runProgram() {
+  console.log(newPointStructure.a);
   let userWord = initialPrompt();
   userWord;
   let scoreAlgorithm = scorerPrompt();
