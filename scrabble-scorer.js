@@ -68,7 +68,7 @@ let vowelBonusScoreObj = {
 }
 
 function scrabbleScore(word) {
-    word = word.toUpperCase();
+    word = word.toLowerCase();
     let score = 0;
     for (let i = 0; i < word.length; i++) {
       score = score + newPointStructure[word[i]];
@@ -112,6 +112,8 @@ function runProgram() {
   let scoreAlgorithm = scorerPrompt();
   scoreAlgorithm;
   userScore = scoreAlgorithm.scorerFunction(userWord);
+  console.log(typeof userScore);
+  console.log(userScore);
   console.log(`Score for \'${userWord}\': ${userScore}`);
 }
 
